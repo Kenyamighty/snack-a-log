@@ -13,7 +13,7 @@ function Snackdetails() {
   useEffect(() => {
     axios.get(`${API}/snacks/${id}`)  
     .then((res) => {
-    setSnack(res.data)                
+    setSnack(res.data.payload)                
     })
   }, [id, navigate, API])
 
@@ -30,16 +30,17 @@ function Snackdetails() {
   }
   return (
     <div>
-     <article>
+     <article className='Snack'>
+      <h1>Snacks</h1>
      <span>
         {snack.is_healthy ? (
-          <img src={heartFull} alt=""/>
+          <img src={heartFull} alt="healthy food"/>
         ):(
-          <img src={heartEmpty} alt=""/>
+          <img src={heartEmpty} alt="unhealthy food"/>
         )
         }
         <h4>{snack.name}</h4>
-        <img src={snack.image} alt=""/>
+        <img src={snack.image} alt={snack.name}/>
        </span> 
        <h5>Protein:{snack.protein}</h5>             
        <h5>Fiber:{snack.fiber}</h5>             

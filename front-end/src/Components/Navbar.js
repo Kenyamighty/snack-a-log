@@ -9,7 +9,7 @@ function Navbar() {
        </h1> 
        <h1>
           <button> 
-             <Link to="/snacks/new">NEW SNACK</Link>       
+             <Link to="/snacks/new">New Snack</Link>       
           </button>
        </h1>            
     </nav>

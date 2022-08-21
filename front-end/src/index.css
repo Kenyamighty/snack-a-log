@@ -1,0 +1,20 @@
+body{
+  font-family: cursive;
+}
+.navbar{
+   display: flex;
+   background-color: rgb(37, 36, 34);
+   justify-content: space-between;
+   text-align: center;
+   align-items: center;
+   padding-top: 1em;
+   padding-bottom: 1em;
+   padding-left: 3em;
+   padding-right: 3em; 
+   margin-bottom: 1em;
+                  
+}
+.navbar a{
+  text-decoration: none;   
+  color: rgb(235, 94, 40);               
+}

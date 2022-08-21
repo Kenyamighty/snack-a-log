@@ -5,19 +5,21 @@ import heartEmpty from '../assets/heart-regular.png'
 
 function Snack({ snack }) {
   return (
-    <div>
+    <div className='Snack'>
       <Link to={`/snacks/${snack.id}`}>
        <span>
-        <img src={snack.image} alt=""/>
+        <img src={snack.image} alt={snack.name}/>
        </span>
        <span>
+        <h4 className='name'>
         {snack.is_healthy ? (
-          <img src={heartFull} alt=""/>
+          <img src={heartFull} alt="healthy food"/>
         ):(
-          <img src={heartEmpty} alt=""/>
+          <img src={heartEmpty} alt="unhealthy food"/>
         )
         }
-        <h4>{snack.name}</h4>
+        {snack.name}
+        </h4>
        </span>
       </Link>
     </div>

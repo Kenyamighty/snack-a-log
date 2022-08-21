@@ -8,10 +8,12 @@ function Snacks() {
    const [snacks,setSnacks] = useState([])   
    useEffect(() => {
      axios.get(`${API}/snacks`)
-     .then((res) => setSnacks(res.data))
+     .then((res) => setSnacks(res.data.payload))
      .catch((c) => console.warn("catch", c))               
    },[])              
   return (
+    <section className='Snacks'>
+      <article>
     <ul>
      {snacks.map((snack) => {
       return(
@@ -21,6 +23,8 @@ function Snacks() {
       )              
      })}
     </ul>
+    </article>
+    </section>
   )
 }
 

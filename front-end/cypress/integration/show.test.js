@@ -18,7 +18,7 @@ describe("Show Page", () => {
         is_healthy: true,
       },
       log: true,
-    }).then((newSnack) => {
+    }).then((newSnack) => {/jobs/companies
       id = newSnack.body.payload.id;
       cy.visit(`${URL}/snacks/${id}`);
     });

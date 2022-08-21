@@ -21,7 +21,7 @@ function Snackeditform() {
       .put(`${API}/snacks/${id}`, updatedSnack)
       .then(
         () => {
-          navigate(`/snacks/${id}`);
+          navigate(`/snacks`);
         },
         (error) => console.error(error)
       )
@@ -33,7 +33,7 @@ function Snackeditform() {
   };
   useEffect(() => {
     axios.get(`${API}/snacks/${id}`)
-    .then((res) => setSnack(res.data), 
+    .then((res) => setSnack(res.data.payload), 
     (error) => navigate(`/not-found`)
     );
   }, [id, navigate]);
@@ -80,7 +80,7 @@ function Snackeditform() {
           value={snack.protein}
           onChange={handleTextChange}
         />
-        <label htmlFor="added_sugar">Added Suger:</label>
+        <label htmlFor="added_sugar">Added Sugar:</label>
         <input
           id="added_sugar"
           type="number"
